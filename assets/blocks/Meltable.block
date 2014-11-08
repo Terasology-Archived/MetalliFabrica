@@ -1,0 +1,17 @@
+{
+	"luminance":1,
+	"hardness":5,
+	"displayName":"meltableBlock",
+	"liquid":false,
+	"shapes":["engine:cube"],
+	"attachmentAllowed": true,
+	"shadowCasting":true,
+	"tile": "MetalliFabrica:Siltstone",
+	"stackable":true,
+	"waving":false,
+	"supportRequired":false,
+	"translucent":false,
+	"entity":{
+	    "prefab":"MetalliFabrica:Meltable"
+	}
+}

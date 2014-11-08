@@ -1,0 +1,14 @@
+{
+	"luminance":0,
+	"hardness":3,
+	"displayName":"EngravedStoneSunPurple",
+	"liquid":false,
+	"shapes":["engine:cube"],
+	"attachmentAllowed": true,
+	"shadowCasting":true,
+	"tile": "MetalliFabrica:EngravedStoneSunPurple",
+	"stackable":true,
+	"waving":false,
+	"supportRequired":false,
+	"translucent":false
+}

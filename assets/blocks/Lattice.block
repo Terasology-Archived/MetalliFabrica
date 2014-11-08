@@ -1,0 +1,14 @@
+{
+	"luminance":0,
+	"hardness":2,
+	"displayName":"Lattice",
+	"liquid":false,
+	"shapes":["engine:cube"],
+	"attachmentAllowed": true,
+	"shadowCasting":true,
+	"tile": "MetalliFabrica:PlanksLattice",
+	"stackable":true,
+	"waving":false,
+	"supportRequired":false,
+	"translucent":true
+}

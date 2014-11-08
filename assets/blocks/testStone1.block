@@ -1,0 +1,14 @@
+{
+	"luminance":0,
+	"hardness":3,
+	"displayName":"testStone11",
+	"liquid":false,
+	"shapes":["engine:cube"],
+	"attachmentAllowed": true,
+	"shadowCasting":true,
+	"tile": "MetalliFabrica:Stone1",
+	"stackable":true,
+	"waving":false,
+	"supportRequired":false,
+	"translucent":false
+}

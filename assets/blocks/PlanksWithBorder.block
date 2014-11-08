@@ -1,0 +1,14 @@
+{
+	"luminance":0,
+	"hardness":3,
+	"displayName":"Planks - Border",
+	"liquid":false,
+	"shapes":["engine:cube", "engine:slope", "engine:stair"],
+	"attachmentAllowed": true,
+	"shadowCasting":true,
+	"tile": "MetalliFabrica:PlanksWithBorder",
+	"stackable":true,
+	"waving":false,
+	"supportRequired":false,
+	"translucent":false
+}

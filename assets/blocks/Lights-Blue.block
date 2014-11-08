@@ -1,0 +1,12 @@
+{
+	"luminance":10,
+	"hardness":2,
+	"displayName":"BlueLight",
+	"liquid":false,
+	"shapes":["engine:cube", "engine:stair", "engine:slope"],
+	"attachmentAllowed": true,
+	"shadowCasting":true,
+	"tile": "MetalliFabrica:Light-Blue",
+	"stackable":true,
+	"waving":false
+}

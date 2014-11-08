@@ -1,0 +1,14 @@
+{
+	"luminance":0,
+	"hardness":1,
+	"displayName":"ClearGlass",
+	"liquid":false,
+	"shapes":["engine:cube"],
+	"attachmentAllowed": true,
+	"shadowCasting":false,
+	"tile": "MetalliFabrica:YellowClearGlass",
+	"stackable":true,
+	"waving":false,
+	"supportRequired":false,
+	"translucent":true
+}

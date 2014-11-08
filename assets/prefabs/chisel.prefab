@@ -1,0 +1,16 @@
+{
+    "parent" : "engine:iconItem",
+    "DisplayName" : {
+        "name" : "Chisel"
+    },
+    "Item" : {
+        "icon": "MetalliFabrica:ChiselExt.Chisel",
+        "usage": "IN_DIRECTION",
+        "renderWithIcon" : true,
+        "baseDamage" : 0
+    },
+  	"PlaySoundAction" : {
+    	sounds = "engine:click"
+  	},
+    "Chisel" : {}
+}

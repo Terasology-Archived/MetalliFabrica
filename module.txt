@@ -1,0 +1,9 @@
+{
+    "id" : "MetalliFabrica",
+    "version" : "0.1.0",
+    "author" : "",
+    "displayName" : "MetalliFabrica",
+    "description" : "",
+    "dependencies" : [],
+    "isServerSideOnly" : false
+}

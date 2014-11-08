@@ -1,0 +1,14 @@
+{
+	"luminance":0,
+	"hardness":4,
+	"displayName":"Planks - Wall",
+	"liquid":false,
+	"shapes":["engine:cube", "engine:slope", "engine:stair"],
+	"attachmentAllowed": true,
+	"shadowCasting":true,
+	"tile": "MetalliFabrica:PlanksWall",
+	"stackable":true,
+	"waving":false,
+	"supportRequired":false,
+	"translucent":false
+}

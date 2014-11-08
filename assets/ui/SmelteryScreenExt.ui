@@ -1,0 +1,15 @@
+{
+  "type": "MetalliFabrica:SmelteryWindow",
+  "contents": {"type": "RelativeLayout",
+  			   "contents": [{
+        			"type": "InventoryGrid",
+       				"id": "SmelteryInput",
+        			"layoutInfo": {
+            			"use-content-width": 112,
+            			"use-content-height": 56,
+            			"position-left": { "offset": 70},
+            			"position-top": {"offset": 70}
+     				}
+     		  }]
+  			}
+}

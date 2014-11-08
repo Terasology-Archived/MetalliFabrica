@@ -1,0 +1,17 @@
+{
+  "Smeltery":{},
+  "SmelteryCount":{},
+  "InteractionTarget": {},
+  "InteractionScreen": {
+    "screen": "MetalliFabrica:SmelteryScreenExt"
+  },
+  "Inventory": {
+          "privateToOwner": false,
+          "itemSlots": [
+              0,
+              0,
+              0,
+              0
+          ]
+      }
+}

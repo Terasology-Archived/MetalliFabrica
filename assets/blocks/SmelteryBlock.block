@@ -1,0 +1,17 @@
+{
+	"luminance":0,
+	"hardness":5,
+	"displayName":"SmelteryBlock",
+	"liquid":false,
+	"shapes":["engine:cube"],
+	"attachmentAllowed": true,
+	"shadowCasting":true,
+	"tile": "MetalliFabrica:SmelteryBlock",
+	"stackable":true,
+	"waving":false,
+	"supportRequired":false,
+	"translucent":false,
+    "entity":{
+    	    "prefab":"MetalliFabrica:SmelteryBricks"
+    }
+}
