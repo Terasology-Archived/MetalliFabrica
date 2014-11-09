@@ -8,6 +8,7 @@ import org.terasology.entitySystem.event.ReceiveEvent;
 import org.terasology.entitySystem.systems.BaseComponentSystem;
 import org.terasology.entitySystem.systems.RegisterMode;
 import org.terasology.entitySystem.systems.RegisterSystem;
+import org.terasology.logic.characters.interactions.InteractionEndEvent;
 import org.terasology.logic.common.ActivateEvent;
 import org.terasology.logic.inventory.InventoryComponent;
 import org.terasology.logic.inventory.InventoryManager;
@@ -17,6 +18,7 @@ import org.terasology.registry.In;
 import org.terasology.world.WorldProvider;
 import org.terasology.world.block.Block;
 import org.terasology.world.block.BlockComponent;
+import org.terasology.world.block.BlockManager;
 import org.terasology.world.block.BlockUri;
 import org.terasology.world.block.items.BlockItemComponent;
 
@@ -31,6 +33,9 @@ public class SmelterySystem extends BaseComponentSystem{
 
     @In
     public InventoryManager inventoryManager;
+
+    @In
+    public BlockManager blockManager;
 
     public int height = 1;
     public int lastHeight;
@@ -53,10 +58,8 @@ public class SmelterySystem extends BaseComponentSystem{
         // calculate how many layers are currently above the smeltery.
         CalculateSmelteryHeight (targetBlockPos);
 
-        if(lastHeight != height) {
-            //create the outer and inner Regions and check the build
-           CreateAndCheckArea(targetBlockPos, new Vector3i(5, height, 5));
-        }
+        //create the outer and inner Regions and check the build
+        CreateAndCheckArea(targetBlockPos, new Vector3i(5, height, 5));
 
         //get number and reference of items in each slot of the inventory
         GetItemsInInventory(smelteryEntity);
@@ -76,9 +79,11 @@ public class SmelterySystem extends BaseComponentSystem{
 
             if(!currentHeightCheckBlockURI.toString().equals("engine:air")){
                 EntityRef currentHeightBlockEnt = currentHeightCheckBlock.getEntity();
-
+                logger.info("check");
+                BlockComponent curHeightBlockCom = currentHeightBlockEnt.getComponent(BlockComponent.class);
                 if(currentHeightBlockEnt.hasComponent(SmelteryCountComponent.class)){
                     height = height + 1;
+                    logger.info(Integer.toString(height));
                 }
             }
         }
@@ -96,17 +101,22 @@ public class SmelterySystem extends BaseComponentSystem{
 
     public void CheckRegions (Region3i outsideRegion, Region3i insideRegion){
 
+        logger.info("starting check!");
+
         Iterator<Vector3i> outsideRegionCheck = outsideRegion.subtract(insideRegion);
 
         while (outsideRegionCheck.hasNext()){
             Vector3i curOutsideBlockPos = outsideRegionCheck.next();
+            logger.info(curOutsideBlockPos.toString());
             Block curBlock = worldProvider.getBlock(curOutsideBlockPos);
             EntityRef curOutsideBlockEnt = curBlock.getEntity();
 
             if(curOutsideBlockEnt.hasComponent(SmelteryCountComponent.class) || curOutsideBlockEnt.hasComponent(SmelteryComponent.class)){
                 outsideRegionCheckBool = true;
+                logger.info("block Passed!");
             } else {
                 outsideRegionCheckBool = false;
+                logger.info("Block Failed! :(");
             }
         }
 
@@ -130,25 +140,29 @@ public class SmelterySystem extends BaseComponentSystem{
             for (int i = 0; i < slotCount; i++) {
                 EntityRef itemsInSlots = smelteryInventoryCom.itemSlots.get(i);
                 int curStackSize = inventoryManager.getStackSize(itemsInSlots);
-                for (int j = 0; j < curStackSize;j++) {
-                    BlockItemComponent blockItemCom = inventoryManager.getItemInSlot(smelteryEntity, j).getComponent(BlockItemComponent.class);
-                    availableSlotsInSmeltery = insideBlockCount - 1;
-                    insideBlockCount = availableSlotsInSmeltery;
+                logger.info(Integer.toString(curStackSize));
+                BlockItemComponent blockItemCom = inventoryManager.getItemInSlot(smelteryEntity, i).getComponent(BlockItemComponent.class);
+                if(blockItemCom != null) {
+                    logger.info(blockItemCom.blockFamily.getURI().toString());
+                    String blockItemName = blockItemCom.blockFamily.getURI().toString();
+                    SmeltToLiquid(blockItemName);
                 }
             }
-
     }
 
-    public void SmeltToLiquid (String liquidName){
-        EntityRef newEntityRef = null;
-        switch (liquidName){
-
-            case "stone": /*create liquid "slag" */;
-                break;
-            case "iron": //create liquid "iron";
-            default: //do nothing;
-                break;
+    public void SmeltToLiquid (String liquidName) {
+        Iterator<Vector3i> insideRegionSpaceCheck = insideRegion.iterator();
+        while(insideRegionSpaceCheck.hasNext()){
+            Vector3i curCheckPos = insideRegionSpaceCheck.next();
+            Block curCheckBlock = worldProvider.getBlock(curCheckPos);
+            Block curPlaceBlock = blockManager.getBlock(liquidName);
+            if(liquidName != null) {
+                if (curCheckBlock.getURI().equals("engine:air")) {
+                    worldProvider.setBlock(curCheckPos, curPlaceBlock);
+                }
+            }
         }
+
     }
 
 }

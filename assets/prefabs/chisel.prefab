@@ -4,7 +4,7 @@
         "name" : "Chisel"
     },
     "Item" : {
-        "icon": "MetalliFabrica:ChiselExt.Chisel",
+        "icon": "MetalliFabrica:Chisel.Chisel",
         "usage": "IN_DIRECTION",
         "renderWithIcon" : true,
         "baseDamage" : 0
