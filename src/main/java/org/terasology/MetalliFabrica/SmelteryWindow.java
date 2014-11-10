@@ -1,13 +1,13 @@
 package org.terasology.MetalliFabrica;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.terasology.entitySystem.entity.EntityRef;
 import org.terasology.logic.players.LocalPlayer;
 import org.terasology.registry.In;
 import org.terasology.rendering.nui.BaseInteractionScreen;
 import org.terasology.rendering.nui.databinding.ReadOnlyBinding;
 import org.terasology.rendering.nui.layers.ingame.inventory.InventoryGrid;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class SmelteryWindow extends BaseInteractionScreen {
 

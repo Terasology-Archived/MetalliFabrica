@@ -1,9 +1,9 @@
 {
     "id" : "MetalliFabrica",
     "version" : "0.1.0",
-    "author" : "",
+    "author" : "Soos",
     "displayName" : "MetalliFabrica",
-    "description" : "",
-    "dependencies" : [],
+    "description" : "Liquid Metal Fabrication",
+    "dependencies" : [{ "id" : "Core", "minVersion" : "0.1.0"}],
     "isServerSideOnly" : false
 }
