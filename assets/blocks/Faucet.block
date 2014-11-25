@@ -1,0 +1,17 @@
+{
+	"luminance":0,
+	"hardness":1,
+	"displayName":"Faucet",
+	"liquid":false,
+	"shapes":["MetalliFabrica:faucet", "engine:cube"],
+	"attachmentAllowed": true,
+	"shadowCasting":false,
+	"tile": "MetalliFabrica:SmelteryBlock",
+	"stackable":false,
+	"waving":false,
+	"supportRequired":false,
+	"translucent":false,
+	"entity":{
+	    "prefab": "MetalliFabrica:Faucet"
+	}
+}

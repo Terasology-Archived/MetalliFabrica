@@ -13,5 +13,6 @@
 	"translucent":false,
 	"entity":{
 	    "prefab":"MetalliFabrica:SmelteryPrefab"
-	}
+	},
+	"inventory":{ "stackable":false}
 }

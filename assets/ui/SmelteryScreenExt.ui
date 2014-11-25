@@ -1,15 +1,28 @@
 {
   "type": "MetalliFabrica:SmelteryWindow",
-  "contents": {"type": "RelativeLayout",
-  			   "contents": [{
-        			"type": "InventoryGrid",
-       				"id": "SmelteryInput",
-        			"layoutInfo": {
-            			"use-content-width": 112,
-            			"use-content-height": 56,
-            			"position-left": { "offset": 70},
-            			"position-top": {"offset": 70}
-     				}
-     		  }]
-  			}
+  "contents": {
+      "type": "RelativeLayout",
+      "contents": [{
+          "type": "InventoryGrid",
+       	  "id": "SmelteryInput",
+          "layoutInfo": {
+              "use-content-width": 112,
+              "use-content-height": 56,
+              "position-left": { "offset": 70},
+              "position-top": {"offset": 70}
+     	  }
+      },{
+     	  "type": "InventoryGrid",
+          "id": "Fuel",
+     	  "layoutInfo": {
+              "use-content-width" : true,
+              "use-content-height" : true,
+              "position-left" : {
+                  "target" : "CENTER",
+                  "offset" : 16
+              },
+              "position-vertical-center" : {}
+     	  }
+      }]
+  }
 }
